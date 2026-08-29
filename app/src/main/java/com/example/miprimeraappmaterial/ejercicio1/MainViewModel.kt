@@ -1,4 +1,4 @@
-package com.example.miprimeraappmaterial
+package com.example.miprimeraappmaterial.ejercicio1
 
 import androidx.lifecycle.ViewModel
 

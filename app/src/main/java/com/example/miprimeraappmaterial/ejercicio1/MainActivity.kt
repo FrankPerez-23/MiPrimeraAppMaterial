@@ -1,12 +1,10 @@
-package com.example.miprimeraappmaterial
+package com.example.miprimeraappmaterial.ejercicio1
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.miprimeraappmaterial.DetailActivity
-import com.example.miprimeraappmaterial.MainViewModel
 import com.example.miprimeraappmaterial.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -20,14 +18,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Evento 1: Validar, guardar en ViewModel y navegar 
+        // Evento 1: Validar, guardar en ViewModel y navegar
         binding.btnEnviar.setOnClickListener {
             val textoNombre = binding.etNombre.text.toString().trim()
             val textoApellido = binding.etApellido.text.toString().trim()
             val textoEdad = binding.etEdad.text.toString().trim()
 
             if (textoNombre.isEmpty() || textoApellido.isEmpty() || textoEdad.isEmpty()) {
-                // USO DE TOAST: Mensaje rápido si el campo está vacío 
+                // USO DE TOAST: Mensaje rápido si el campo está vacío
                 Toast.makeText(this, "Por favor, complete todos los campos",
                     Toast.LENGTH_SHORT).show()
             } else {
@@ -44,9 +42,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Evento 2: Ejemplo de Snackbar con acción 
+        // Evento 2: Ejemplo de Snackbar con acción
         binding.btnProbarSnackbar.setOnClickListener { view ->
-            // USO DE SNACKBAR: Mensaje de Material Design con botón de acción 
+            // USO DE SNACKBAR: Mensaje de Material Design con botón de acción
             Snackbar.make(view, "Este es un mensaje informativo",
                 Snackbar.LENGTH_LONG)
                 .setAction("Entendido") {
@@ -55,5 +53,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 .show()
         }
+
+        binding.btnVolver.setOnClickListener {
+            finish()
+        }
     }
-} 
+}
