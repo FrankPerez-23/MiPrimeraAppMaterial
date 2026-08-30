@@ -14,11 +14,13 @@ class DetailActivity_3 : AppCompatActivity() {
         binding = ActivityDetail3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val usuarioRecibido = IntentCompat.getParcelableExtra<Usuario>(intent,"CLAVE_USUARIO", Usuario::class.java)
+        val usuarioRecibido = IntentCompat.getParcelableExtra(intent,"CLAVE_USUARIO", Usuario::class.java)
 
-        binding.tvNombre.text = "Nombre: ${usuarioRecibido.name}"
-        binding.tvCorreo.text = "Correo: ${usuarioRecibido.mail}"
-        binding.tvTelefono.text = "Telefono: ${usuarioRecibido.phone}"
+        if (usuarioRecibido != null){
+            binding.tvNombre.text = "Nombre: ${usuarioRecibido.name}"
+            binding.tvCorreo.text = "Correo: ${usuarioRecibido.mail}"
+            binding.tvTelefono.text = "Telefono: ${usuarioRecibido.phone}"
+        }
 
         binding.btnVolver.setOnClickListener {
             finish()

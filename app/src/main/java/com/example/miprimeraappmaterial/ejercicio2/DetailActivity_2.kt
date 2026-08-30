@@ -17,10 +17,10 @@ class DetailActivity_2 : AppCompatActivity() {
         val ahorroRecibido = intent.getDoubleExtra("CLAVE_AHORRO",0.0)
 
         if(ahorroRecibido > 50){
-            binding.tvAhorro.text = "Felicidades!! Ahorraste S/ $ahorroRecibido%.2f en esta compra"
+            binding.tvAhorro.text = "Felicidades!! Ahorraste S/ $ahorroRecibido en esta compra"
             binding.tvAhorro.setTextColor(getColor(android.R.color.holo_green_dark))
         }else{
-            binding.tvAhorro.text = "Ahorraste S/ $ahorroRecibido%.2f"
+            binding.tvAhorro.text = "Ahorraste S/ $ahorroRecibido"
             binding.tvAhorro.setTextColor(getColor(android.R.color.darker_gray))
         }
         binding.btnVolver.setOnClickListener {

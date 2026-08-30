@@ -16,13 +16,7 @@
             android:exported="false" />
         <activity
             android:name=".ejercicio1.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".ejercicio2.MainActivity_2"
             android:exported="false"
@@ -41,6 +35,28 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".MainActivity_Original"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ejercicio4.MainActivity_4"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ejercicio4.DetailActivity_4"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ejercicio5.MainActivity_5"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ejercicio5.DetailActivity_5"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

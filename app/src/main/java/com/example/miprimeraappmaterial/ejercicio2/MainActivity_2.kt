@@ -23,18 +23,18 @@ class MainActivity_2 : AppCompatActivity() {
 
             if (textPrecio.isEmpty() || textPorcent.isEmpty()){
                 Toast.makeText(this, "Por favor complete los campos", Toast.LENGTH_SHORT).show()
+            }else{
+                val precio = textPrecio.toDouble()
+                val descuento = textPorcent.toDouble()
+
+                viewModel.calcularDescuento(precio, descuento)
+
+                val intent = Intent(this, DetailActivity_2::class.java).apply {
+                    putExtra("CLAVE_PRECIO", viewModel.precioFinal)
+                    putExtra("CLAVE_AHORRO", viewModel.montoAhorrado)
+                }
+                startActivity(intent)
             }
-
-            val precio = textPrecio.toDouble()
-            val descuento = textPorcent.toDouble()
-
-            viewModel.calcularDescuento(precio, descuento)
-
-            val intent = Intent(this, DetailActivity_2::class.java).apply {
-                putExtra("CLAVE_PRECIO", viewModel.precioFinal)
-                putExtra("CLAVE_AHORRO", viewModel.montoAhorrado)
-            }
-            startActivity(intent)
         }
     }
 }
